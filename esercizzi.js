@@ -240,7 +240,6 @@ function findOldestMovie(movies) {
   return oldestMovie;
 }
 
-// Test della funzione
 const oldestMovie = findOldestMovie(movies);
 console.log(
   "Il film più vecchio è:",
@@ -252,11 +251,26 @@ console.log(
 /* ESERCIZIO 10
     Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
   */
+function getNumberOfMovies(movies) {
+  return movies.length;
+}
+
+const numberOfMovies = getNumberOfMovies(movies);
+console.log("Il numero di film è:", numberOfMovies);
 
 /* ESERCIZIO 11 (map)
     Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
   */
+function getMovieTitles(movies) {
+  const titles = [];
+  movies.forEach((movie) => {
+    titles.push(movie.Title);
+  });
+  return titles;
+}
 
+const movieTitles = getMovieTitles(movies);
+console.log("Titoli dei film:", movieTitles);
 /* ESERCIZIO 12 (filter)
     Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
   */
