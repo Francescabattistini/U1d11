@@ -3,11 +3,13 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 function concatenamento(str1, str2) {
-  const firstPart = str1.slice(0, 2);
+  firstPart = str1.slice(0, 2);
 
-  const secondPart = str2.slice(-3);
+  secondPart = str2.slice(-3);
 
-  const result = firstPart.concat(secondPart);
+  result = firstPart.concat(secondPart);
+
+  result = result.toUpperCase();
 
   console.log(result);
 }
@@ -90,7 +92,6 @@ function stringLengths(arr) {
   });
 }
 
-// Esempio di utilizzo:
 const strings = ["amo", "tanto", "i", "gatti"];
 const lengths = stringLengths(strings);
 console.log(lengths);
@@ -319,17 +320,13 @@ console.log("Film più vecchio:", filmAntico);
     Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
   */
 function findFirstMovieIndexByYear(movies, year) {
-  // Utilizziamo la funzione `findIndex` sull'array `movies`
   const index = movies.findIndex((movie) => {
-    // Restituiamo true se l'anno del film corrente è uguale all'anno fornito
     return movie.Year === year;
   });
 
-  // Restituiamo l'indice del primo film trovato
   return index;
 }
 
-// Test della funzione
 const year = "2012";
 const firstMovieIndex = findFirstMovieIndexByYear(movies, year);
 console.log("Indice del primo film uscito nel", year + ":", firstMovieIndex);
