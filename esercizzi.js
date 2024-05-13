@@ -94,10 +94,19 @@ function stringLengths(arr) {
 const strings = ["amo", "tanto", "i", "gatti"];
 const lengths = stringLengths(strings);
 console.log(lengths);
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-
+function numeriDispari() {
+  const dispariArray = [];
+  for (let index = 1; index < 99; index += 2) {
+    dispariArray.push(index);
+  }
+  return dispariArray;
+}
+const dispari = numeriDispari();
+console.log("numeri dispari da 1 a 99:", dispari);
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
