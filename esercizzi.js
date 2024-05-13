@@ -271,18 +271,65 @@ function getMovieTitles(movies) {
 
 const movieTitles = getMovieTitles(movies);
 console.log("Titoli dei film:", movieTitles);
+
 /* ESERCIZIO 12 (filter)
     Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
   */
+function getMoviesThisMillennium(movies) {
+  const currentYear = new Date().getFullYear();
+  const millenniumMovies = movies.filter((movie) => {
+    return parseInt(movie.Year) >= 2000 && parseInt(movie.Year) < currentYear;
+  });
+  return millenniumMovies;
+}
 
+const millenniumMovies = getMoviesThisMillennium(movies);
+console.log("Film usciti nel millennio corrente:", millenniumMovies);
 /* ESERCIZIO 13 (reduce)
     Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
   */
+function sumOfProductionYears(movies) {
+  const sum = movies.reduce((total, movie) => {
+    return total + parseInt(movie.Year);
+  }, 0);
+  return sum;
+}
 
+const totalYears = sumOfProductionYears(movies);
+console.log("Somma degli anni di produzione dei film:", totalYears);
 /* ESERCIZIO 14 (find)
     Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
   */
+function findOldestMovie(movies) {
+  // Utilizziamo la funzione `find` sull'array `movies`
+  const filmAntico = movies.find((movie) => {
+    // Restituiamo true se il film ha l'anno minimo
+    return movie.Year === "1963";
+  });
+
+  // Restituiamo il film più vecchio trovato
+  return filmAntico;
+}
+
+// Test della funzione
+const filmAntico = findOldestMovie(movies);
+console.log("Film più vecchio:", filmAntico);
 
 /* ESERCIZIO 15 (findIndex)
     Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
   */
+function findFirstMovieIndexByYear(movies, year) {
+  // Utilizziamo la funzione `findIndex` sull'array `movies`
+  const index = movies.findIndex((movie) => {
+    // Restituiamo true se l'anno del film corrente è uguale all'anno fornito
+    return movie.Year === year;
+  });
+
+  // Restituiamo l'indice del primo film trovato
+  return index;
+}
+
+// Test della funzione
+const year = "2012";
+const firstMovieIndex = findFirstMovieIndexByYear(movies, year);
+console.log("Indice del primo film uscito nel", year + ":", firstMovieIndex);
