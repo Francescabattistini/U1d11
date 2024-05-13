@@ -25,7 +25,7 @@ function generateRandomArray() {
   return randomArray;
 }
 
-console.log(generateRandomArray());
+console.log("Numeri random", generateRandomArray());
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
@@ -36,8 +36,8 @@ function numeriX(array) {
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const numeriPari = numeriX(numbers);
-console.log(numeriPari);
-console.log(numeriX);
+console.log("I NUMERI PARI SONO:", numeriPari);
+console.log("contenuto della funzione per ricavare i numeri pari", numeriX);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -53,12 +53,24 @@ function calcolaSomma(arrayNumeri) {
 }
 const numero = [1, 2, 3, 4, 5, 5];
 const somma = calcolaSomma(numero);
-console.log(somma);
+console.log("somma dei numeri degli array:", somma);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+function sommaArray(arrayNumeri) {
+  // Utilizziamo il metodo reduce per sommare i numeri dell'array
+  // Il parametro `acc` rappresenta l'accumulatore che tiene traccia della somma parziale,
+  // mentre `numero` rappresenta l'elemento corrente dell'array.
+  const sommaTotale = arrayNumeri.reduce((acc, numero) => acc + numero, 0);
 
+  // Ritorniamo la somma totale
+  return sommaTotale;
+}
+
+// Esempio di utilizzo
+const numeri = [1, 2, 3, 4, 5];
+console.log("LA SOMMA E':", sommaArray(numeri)); // Output: 15
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
