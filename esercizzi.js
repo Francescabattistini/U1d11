@@ -58,28 +58,42 @@ console.log("somma dei numeri degli array:", somma);
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
 function sommaArray(arrayNumeri) {
-  // Utilizziamo il metodo reduce per sommare i numeri dell'array
-  // Il parametro `acc` rappresenta l'accumulatore che tiene traccia della somma parziale,
-  // mentre `numero` rappresenta l'elemento corrente dell'array.
   const sommaTotale = arrayNumeri.reduce((acc, numero) => acc + numero, 0);
 
-  // Ritorniamo la somma totale
   return sommaTotale;
 }
 
-// Esempio di utilizzo
 const numeri = [1, 2, 3, 4, 5];
 console.log("LA SOMMA E':", sommaArray(numeri)); // Output: 15
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+function incrementArray(arr, n) {
+  return arr.map(function (num) {
+    return num + n;
+  });
+}
+
+const nuMMeri = [1, 2, 3, 4, 5];
+const incrementedNumbers = incrementArray(numbers, 10);
+console.log("secodo array:", incrementedNumbers);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+function stringLengths(arr) {
+  return arr.map(function (str) {
+    return str.length;
+  });
+}
 
+// Esempio di utilizzo:
+const strings = ["amo", "tanto", "i", "gatti"];
+const lengths = stringLengths(strings);
+console.log(lengths);
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
